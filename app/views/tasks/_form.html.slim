@@ -7,8 +7,8 @@
         label for="status" Status
         br
         = form.select :status, options_for_select(Task.statuses.map{|key, value| [key.titleize, Task.statuses.key(value)]}, @task.status)
-      .col-md-1.form-button
-        = link_to 'Delete', user_task_path(@user, @task), data: {confirm: "Are you sure?"}, :method => :delete
+      .col-md-1.form-button.delete-color
+        = link_to 'Delete Task', user_task_path(@user, @task), data: {confirm: "Are you sure?"}, :method => :delete
     - else
       .col-md-2
         = form.input :name, label: "name"
