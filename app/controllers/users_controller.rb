@@ -26,21 +26,16 @@ class UsersController < ApplicationController
   end
 
   def update
-    respond_to do |format|
-      if @user.update(user_params)
-        redirect_to user_path(@user)
-      else
-        redirect_to :edit
-      end
+    if @user.update(user_params)
+      redirect_to user_path(@user)
+    else
+      redirect_to :edit
     end
   end
 
   def destroy
     @user.destroy
-
-    if @user.destroy
-      redirect_to root_path
-    end
+    redirect_to root_path
   end
 
   private

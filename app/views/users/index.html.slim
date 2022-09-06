@@ -1,6 +1,7 @@
-h1 Listing users
+.text-center
+  h1 Listing users
 
-table
+table.table.table-striped.table-hover.text-center
   thead
     tr
       th Name
@@ -8,9 +9,9 @@ table
   tbody
     - @users.each do |user|
       tr
-        td = link_to user.name, user
+        td.bold = link_to user.name, user
         td = user.tasks.count
 
-br
-
-= link_to "New User", new_user_path
+.row
+  col-md-12.text-center
+    = link_to "New User", new_user_path

@@ -1,6 +1,6 @@
 class TasksController < ApplicationController
   before_action :get_user
-  before_action :set_task, only: %i(show edit update destroy)
+  before_action :set_task, only: %i[ show edit update destroy ]
 
   def index
     @tasks = Task.all
@@ -36,15 +36,15 @@ class TasksController < ApplicationController
 
   def destroy
     @task.destroy
-    if @task.destroy
-      redirect_to user_path(@user)
-    end
+    redirect_to user_path(@user)
   end
 
   private
+
     def get_user
       @user = User.find(params[:user_id])
     end
+
     def set_task
       @task = Task.find(params[:id])
     end

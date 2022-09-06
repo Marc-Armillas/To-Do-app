@@ -61,8 +61,6 @@ gem "slim-rails"
 # $bundle exec annotate --models
 gem "annotate"
 
-# Decorator gem
 gem "draper", "~> 4.0"
 
-# Simple form
 gem "simple_form"

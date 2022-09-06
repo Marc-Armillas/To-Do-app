@@ -1,9 +1,18 @@
 = simple_form_for([@user, @task]) do |form|
-  - if @task.persisted?
-    = form.input :name, label: "name"
-    = form.select :status, options_for_select(Task.statuses.map{|key, value| [key.titleize, Task.statuses.key(value)]}, @task.status)
+  .row
+    - if @task.persisted?
+      .col-md-2
+        = form.input :name, label: "Name"
+      .col-md-2
+        label for="status" Status
+        br
+        = form.select :status, options_for_select(Task.statuses.map{|key, value| [key.titleize, Task.statuses.key(value)]}, @task.status)
+      .col-md-2.form-button
+        = link_to 'Remove', user_task_path(@user, @task), :method => :delete, :remote => true
+        / = link_to 'Remove', invoice_item_path(@invoice, h.object), :method => :delete, :remote => true, :class => 'destroy_duplicate_nested_form'
 
-  - else
-    = form.input :name, label: "name"
-  = form.button :submit
-
+    - else
+      .col-md-2
+        = form.input :name, label: "name"
+    .col-md-2.form-button
+      = form.button :submit

@@ -1,5 +1,8 @@
 = simple_form_for @user do |form|
-  = form.input :name, label: "nombre"
-  = form.input :email
-
-  = form.button :submit
+  .row
+    .col-md-2 
+      = form.input :name, label: "nombre"
+    .col-md-2
+      = form.input :email
+    .col-md-2.form-button
+      = form.button :submit

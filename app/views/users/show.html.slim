@@ -1,6 +1,7 @@
-h1 = @user.name
+.text-center
+  h1 = @user.name
 
-table
+table.table.table-striped.table-hover.text-center
   thead
     tr
       th Task
@@ -15,5 +16,10 @@ table
   tfoot
     tr
       td = link_to "New todo", new_user_task_path(@user)
-      td = link_to "Destroy user", @user, data: {confirm: "Are you sure?"}, method: :delete
-      td = link_to "Edit user", edit_user_path(@user)
+      td colspan="2" &nbsp
+
+.row.text-center
+  .col-md-6
+    = link_to "Destroy user", @user, data: {confirm: "Are you sure?"}, method: :delete
+  .col-md-6
+    = link_to "Edit user", edit_user_path(@user)
