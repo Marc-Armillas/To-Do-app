@@ -1,0 +1,21 @@
+# == Schema Information
+#
+# Table name: tasks
+#
+#  id         :integer          not null, primary key
+#  name       :string
+#  user_id    :integer          not null
+#  created_at :datetime         not null
+#  updated_at :datetime         not null
+#  status     :integer
+#
+
+one:
+  name: MyString
+  user: one
+  status: one
+
+two:
+  name: MyString
+  user: two
+  status: two

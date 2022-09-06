@@ -1,0 +1,19 @@
+h1 = @user.name
+
+table
+  thead
+    tr
+      th Task
+      th Status
+      th Edit task
+  tbody
+    - @user.tasks.each do |task|
+      tr
+        td = task.name
+        td = task.status.titleize
+        td = link_to "Edit", edit_user_task_path(@user, task)
+  tfoot
+    tr
+      td = link_to "New todo", new_user_task_path(@user)
+      td = link_to "Destroy user", @user, data: {confirm: "Are you sure?"}, method: :delete
+      td = link_to "Edit user", edit_user_path(@user)

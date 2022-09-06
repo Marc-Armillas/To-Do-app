@@ -1,0 +1,9 @@
+= simple_form_for([@user, @task]) do |form|
+  - if @task.persisted?
+    = form.input :name, label: "name"
+    = form.select :status, options_for_select(Task.statuses.map{|key, value| [key.titleize, Task.statuses.key(value)]}, @task.status)
+
+  - else
+    = form.input :name, label: "name"
+  = form.button :submit
+
