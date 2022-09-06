@@ -1,27 +1,36 @@
-a {
-  text-decoration: none;
-  color: black;
-}
+body {
+  background-color: #f2f2f2 !important;
 
-a:hover {
-  background-color: transparent;
-  color: black;
-  text-decoration: underline;
-}
+  a {
+    text-decoration: none;
+    color: black, !important;
+  }
 
-a:visited {
-  color: black;
-}
+  a:hover {
+    background-color: transparent;
+    color: black;
+    text-decoration: underline;
+  }
 
-.bold {
-  font-weight: bold;
-}
+  a:visited {
+    color: black, !important;
+    text-decoration: none;
+  }
 
-.form-button {
-  margin-top: 1em;
-}
+  .bold {
+    font-weight: bold;
+  }
 
-select {
-  width: 183px;
-  height: 30px;
+  .form-button {
+    margin-top: 24px;
+  }
+
+  .submit-button {
+    margin-top: 1em;
+  }
+
+  select {
+    width: 183px;
+    height: 30px;
+  }
 }

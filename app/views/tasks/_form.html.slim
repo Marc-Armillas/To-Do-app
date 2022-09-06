@@ -7,12 +7,10 @@
         label for="status" Status
         br
         = form.select :status, options_for_select(Task.statuses.map{|key, value| [key.titleize, Task.statuses.key(value)]}, @task.status)
-      .col-md-2.form-button
-        = link_to 'Remove', user_task_path(@user, @task), :method => :delete, :remote => true
-        / = link_to 'Remove', invoice_item_path(@invoice, h.object), :method => :delete, :remote => true, :class => 'destroy_duplicate_nested_form'
-
+      .col-md-1.form-button
+        = link_to 'Delete', user_task_path(@user, @task), data: {confirm: "Are you sure?"}, :method => :delete
     - else
       .col-md-2
         = form.input :name, label: "name"
-    .col-md-2.form-button
+    .col-md-1.submit-button
       = form.button :submit

@@ -19,10 +19,10 @@ class TasksController < ApplicationController
   def create
     @task = @user.tasks.build(task_params)
 
-    if @task.save!
+    if @task.save
       redirect_to user_path(@user)
     else
-      redirect_to :edit
+      redirect_to new_user_task_path(@user), danger: "Name field is required"
     end
   end
 
@@ -30,7 +30,7 @@ class TasksController < ApplicationController
     if @task.update(task_params)
      redirect_to user_path(@user)
     else
-      redirect_to :edit
+      redirect_to edit_user_task_path(@user, @task), danger: "Name field is required"
     end
   end
 

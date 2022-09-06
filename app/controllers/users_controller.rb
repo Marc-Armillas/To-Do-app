@@ -21,7 +21,7 @@ class UsersController < ApplicationController
     if @user.save
       redirect_to root_path
     else
-      redirect_to :edit
+      redirect_to new_user_path, danger: "both fields are required"
     end
   end
 
@@ -29,7 +29,7 @@ class UsersController < ApplicationController
     if @user.update(user_params)
       redirect_to user_path(@user)
     else
-      redirect_to :edit
+      redirect_to edit_user_path(@user), danger: "Both fields are required"
     end
   end
 
@@ -39,6 +39,7 @@ class UsersController < ApplicationController
   end
 
   private
+
     def set_user
       @user = User.find(params[:id])
     end

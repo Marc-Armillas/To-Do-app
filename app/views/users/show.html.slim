@@ -20,6 +20,6 @@ table.table.table-striped.table-hover.text-center
 
 .row.text-center
   .col-md-6
-    = link_to "Destroy user", @user, data: {confirm: "Are you sure?"}, method: :delete
+    = link_to "Delete user", @user, data: {confirm: "Are you sure?"}, method: :delete
   .col-md-6
     = link_to "Edit user", edit_user_path(@user)
