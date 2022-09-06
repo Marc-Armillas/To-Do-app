@@ -21,7 +21,7 @@ class UsersController < ApplicationController
     if @user.save
       redirect_to root_path
     else
-      redirect_to new_user_path, danger: "both fields are required"
+      redirect_to new_user_path, danger: "Both fields are required"
     end
   end
 
