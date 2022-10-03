@@ -10,14 +10,14 @@ class TasksController < ApplicationController
   end
 
   def new
-    @task = @user.tasks.build
+    @task = @user.tasks.new
   end
 
   def edit
   end
 
   def create
-    @task = @user.tasks.build(task_params)
+    @task = @user.tasks.new(task_params)
 
     if @task.save
       redirect_to user_path(@user)
@@ -35,7 +35,7 @@ class TasksController < ApplicationController
   end
 
   def destroy
-    @task.destroy
+    @user.tasks.destroy(@task)
     redirect_to user_path(@user)
   end
 
